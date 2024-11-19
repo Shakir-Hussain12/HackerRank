@@ -46,3 +46,23 @@ while(len(operators) > 0):
     
 
 print(operands)
+s = operands.pop()
+print("calculating the result")
+operands = []
+
+i = len(s) - 1
+while i >= 0:
+    if s[i] == '+':
+        operands.append(operands.pop() + operands.pop())
+    elif s[i] == '-':
+        operands.append(operands.pop() - operands.pop())
+    elif s[i] == '*':
+        operands.append(operands.pop() * operands.pop())
+    elif s[i] == '/':
+        operands.append(operands.pop() / operands.pop())
+    else:
+        operands.append(int(s[i]))
+        
+    i -= 1
+
+print(operands)
